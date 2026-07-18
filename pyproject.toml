@@ -11,8 +11,6 @@ dependencies = []
 Repository = "https://github.com/lbouaraba/comfyui-krea2edit"
 
 [tool.comfy]
-# PublisherId comes from your account at https://registry.comfy.org (Settings → Publisher).
-# Fill this in (or tell me the value) before `comfy node publish`.
-PublisherId = ""
+PublisherId = "conradlocke"
 DisplayName = "Krea 2 Identity Edit"
 includes = []
