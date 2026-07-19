@@ -293,7 +293,19 @@ class Krea2EditModelPatch:
                   f"'vae' and 'source_image' connected (the pixel path). Falling back to the "
                   f"latent crop path.", flush=True)
 
-        def wrapper(executor, x, timesteps, context, attention_mask=None, transformer_options={}, **kwargs):
+        def wrapper(executor, x, timesteps, context, *wargs, **kwargs):
+            # ComfyUI signature drift (2026-07-19, commit c9602625 adds ref_latents):
+            #   old: execute(x, t, ctx, attention_mask, transformer_options)
+            #   new: execute(x, t, ctx, attention_mask, ref_latents, transformer_options)
+            # Accept both: transformer_options is the trailing dict; any native
+            # ref_latents are ignored (this patch supplies its own source path).
+            transformer_options = kwargs.pop("transformer_options", None)
+            if transformer_options is None:
+                transformer_options = {}
+                for a in reversed(wargs):
+                    if isinstance(a, dict):
+                        transformer_options = a
+                        break
             dm = executor.class_obj  # the SingleStreamDiT instance
             src = src_samples
             if vae is not None and source_image is not None:
