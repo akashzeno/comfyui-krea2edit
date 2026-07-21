@@ -87,9 +87,10 @@ default; enable group 2 (toggle its Bypass off) for two-image person-into-scene 
    `source_latent_b`/`image_b`. Leave the b-inputs unconnected for single-image use.
 6. **Generate at ≤2MP.** Above the trained range, source content can bleed into
    the output or subjects duplicate.
-7. **Two people with distinct faces:** chain single-ref inserts (place person A,
-   then run a second edit adding person B from their reference) — currently more
-   face-faithful than one two-ref pass.
+7. **Two distinct people:** place both references in a single pass (scene/subject A on
+   the main inputs, subject B on the `_b` inputs) rather than adding them one at a time —
+   simultaneous placement is currently more reliable than chaining separate edits. Face
+   separation is still imperfect and a focus for future versions.
 
 ## License / credits
 
@@ -97,3 +98,18 @@ Nodes: Apache-2.0. The **Krea 2 Identity Edit** weights ship separately under th
 Krea 2 Community License Agreement (see the model card, `LICENSE.pdf`, and `NOTICE`
 in the weights repo).
 Built on Krea 2 by Krea AI; text encoder Qwen3-VL (Alibaba).
+
+## Acknowledgments
+
+Huge thanks to [CeciliaXCIX](https://huggingface.co/CeciliaXCIX) for tireless, high-quality
+community support in the discussions. It genuinely makes this project better.
+
+## Scope and responsible use
+
+Krea 2 Identity Edit is an identity-preserving character restaging model, trained only on
+SFW data. It is not trained on any NSFW concepts, and I have no plans to add or support NSFW
+data in current or future versions.
+
+I do not endorse or support using this model to produce non-consensual, harmful, or sexual
+imagery of real people, including deepfakes. Please use it responsibly and respect the
+consent and likeness of anyone you depict.
