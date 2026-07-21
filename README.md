@@ -5,6 +5,8 @@ the **Krea 2 Identity Edit** LoRA. Turns Krea 2 (Raw or Turbo) into an image edi
 conditioning: the source image is injected both as VAE latent tokens (appearance) and
 into the Qwen3-VL text encoder (semantic grounding), matching how the LoRA was trained.
 
+☕ **[Support on Ko-fi](https://ko-fi.com/conradlocke)** — all tips go straight to GPU compute for future versions.
+
 ## Model versions
 
 See [CHANGELOG.md](CHANGELOG.md) — **v1.2 is recommended** (better face likeness,
@@ -99,10 +101,20 @@ Krea 2 Community License Agreement (see the model card, `LICENSE.pdf`, and `NOTI
 in the weights repo).
 Built on Krea 2 by Krea AI; text encoder Qwen3-VL (Alibaba).
 
-## Acknowledgments
+## Contributors & thanks
 
-Huge thanks to [CeciliaXCIX](https://huggingface.co/CeciliaXCIX) for tireless, high-quality
-community support in the discussions. It genuinely makes this project better.
+This is a solo project, made a lot better by the community. Thank you to:
+
+- **[stablellama](https://huggingface.co/stablellama)** — the MIT-licensed head/face/eye/person
+  swap dataset behind those capabilities in v1.2.
+- **[CeciliaXCIX](https://huggingface.co/CeciliaXCIX)** — tireless, high-quality community
+  support in the discussions.
+- **[akashzeno](https://github.com/akashzeno)** — node engineering: diagnosing the ComfyUI
+  compatibility break and contributing the regression test.
+- **[SubtleShader](https://huggingface.co/SubtleShader)** — testing the training code and
+  consumer-GPU feedback.
+
+Want to help? Contributions of training data and node/code work are welcome, see the discussions.
 
 ## Scope and responsible use
 
