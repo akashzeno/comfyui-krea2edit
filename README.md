@@ -113,6 +113,7 @@ This is a solo project, made a lot better by the community. Thank you to:
   compatibility break and contributing the regression test.
 - **[SubtleShader](https://huggingface.co/SubtleShader)** — testing the training code and
   consumer-GPU feedback.
+- **Mark ([sogni.ai](https://sogni.ai))** — support, a GPU-fund donation, and getting the word out.
 
 Want to help? Contributions of training data and node/code work are welcome, see the discussions.
 
